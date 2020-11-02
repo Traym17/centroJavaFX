@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="10" prefHeight="532.0" prefWidth="862.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.ControllerLogin">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="559.0" prefWidth="876.0">
+         <children>
+            <AnchorPane prefHeight="532.0" prefWidth="549.0" style="-fx-background-color: #a20a20;">
+               <children>
+                  <ImageView fitHeight="532.0" fitWidth="549.0" opacity="0.89" pickOnBounds="true">
+                     <image>
+                        <Image url="@../recursos/img/fondo.jpg" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.35" contrast="0.28" hue="1.0" saturation="0.95" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btn_registroUsuario" layoutX="367.0" layoutY="240.0" onAction="#registroUsuario" prefHeight="29.0" prefWidth="173.0" style="-fx-background-color: #631245;" styleClass="hoverBoton" text="Registrate" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label layoutX="267.0" layoutY="153.0" prefHeight="40.0" prefWidth="276.0" text="Bienvenido a L!feTunes" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="280.0" layoutY="193.0" prefHeight="29.0" prefWidth="261.0" text="La música es el verdadero lenguaje universal." textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btn_iniciarSesion" layoutX="367.0" layoutY="240.0" onAction="#iniciarSesion" prefHeight="29.0" prefWidth="173.0" style="-fx-background-color: #631245;" styleClass="hoverBoton" text="Iniciar sesion" textAlignment="CENTER" textFill="WHITE" visible="false">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="549.0" prefHeight="532.0" prefWidth="317.0" style="-fx-background-color: #631245;">
+               <children>
+                  <AnchorPane fx:id="panelInicio" layoutX="21.0" layoutY="57.0" prefHeight="416.0" prefWidth="276.0" style="-fx-background-color: #801256;">
+                     <effect>
+                        <DropShadow color="#801256" height="38.37" radius="18.0475" spread="0.12" width="35.82" />
+                     </effect>
+                     <children>
+                        <Text fill="WHITE" layoutX="88.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar sesiòn">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="userName" focusColor="WHITE" layoutX="30.0" layoutY="115.0" prefHeight="30.0" prefWidth="218.0" promptText="Correo electronico" style="-fx-text-fill: white; -fx-prompt-text-fill: white;" unFocusColor="#e8e6e6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="password" focusColor="WHITE" layoutX="30.0" layoutY="201.0" prefHeight="30.0" prefWidth="218.0" promptText="Contraseña" style="-fx-text-fill: white; -fx-prompt-text-fill: white;" styleClass="text-input" unFocusColor="#e8e8e8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Text fill="WHITE" layoutX="72.0" layoutY="352.0" onMouseClicked="#recuperarContrasenna" strokeType="OUTSIDE" strokeWidth="0.0" text="Recuperar contraseña" underline="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <JFXButton layoutX="26.0" layoutY="287.0" onAction="#login1" prefHeight="29.0" prefWidth="225.0" style="-fx-background-color: #17d198;" styleClass="hoverBoton" text="Inicia sesion" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label fx:id="mensaje" layoutX="30.0" layoutY="251.0" prefHeight="17.0" prefWidth="218.0" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelPassword" layoutX="21.0" layoutY="57.0" prefHeight="416.0" prefWidth="276.0" style="-fx-background-color: #801256;" visible="false">
+                     <effect>
+                        <DropShadow color="#801256" height="38.37" radius="18.0475" spread="0.12" width="35.82" />
+                     </effect>
+                     <children>
+                        <Text fill="WHITE" layoutX="53.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recuperar contraseña">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField focusColor="WHITE" layoutX="29.0" layoutY="176.0" prefHeight="30.0" prefWidth="218.0" promptText="Correo electronico" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" styleClass="text-input" unFocusColor="#e8e6e6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton layoutX="26.0" layoutY="243.0" prefHeight="29.0" prefWidth="225.0" style="-fx-background-color: #17d198;" text="Restablecer" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Text fill="WHITE" layoutX="258.0" layoutY="18.0" onMouseClicked="#cerrarPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                        </Text>
+                        <Label layoutX="26.0" layoutY="101.0" prefHeight="40.0" prefWidth="225.0" text="De esta forma nos aseguramos que esta cuenta te pertenece." textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panel_Registro" layoutX="21.0" layoutY="57.0" prefHeight="416.0" prefWidth="276.0" style="-fx-background-color: #801256;" visible="false">
+                     <children>
+                        <Button layoutX="12.0" layoutY="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="252.0" style="-fx-background-color: #3b5998;" text="Iniciar sesion con Facebook" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="18.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../recursos/img/facebook.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="4.0" layoutX="113.0" layoutY="86.0" startX="-100.0" stroke="WHITE" />
+                        <Line endX="4.0" layoutX="259.0" layoutY="86.0" startX="-100.0" stroke="WHITE" />
+                        <Label layoutX="130.0" layoutY="78.0" text="OR" textFill="WHITE" />
+                        <Label layoutX="21.0" layoutY="108.0" text="Registrese con su cuenta de correo " textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="nombreS" focusColor="WHITE" layoutX="12.0" layoutY="155.0" prefHeight="25.0" prefWidth="252.0" promptText="Nombre completo" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#c9c7c7" />
+                        <JFXTextField fx:id="idS" focusColor="WHITE" layoutX="12.0" layoutY="213.0" prefHeight="25.0" prefWidth="252.0" promptText="Identificacion" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#c9c7c7" />
+                        <JFXTextField fx:id="correoS" focusColor="WHITE" layoutX="12.0" layoutY="272.0" prefHeight="25.0" prefWidth="252.0" promptText="Correo electronico" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#c9c7c7" />
+                        <Button layoutX="13.0" layoutY="330.0" mnemonicParsing="false" onAction="#registrarCuenta" prefHeight="30.0" prefWidth="252.0" style="-fx-background-color: #17d198;" text="Crear cuenta" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="31.0" layoutY="375.0" text="Al crear la cuenta acepta los terminos" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</GridPane>
